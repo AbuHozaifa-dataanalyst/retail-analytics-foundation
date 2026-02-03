@@ -12,3 +12,13 @@ JOIN Dim_Store st
 	ON s.Store_ID = st.Store_ID
 GROUP BY st.Store_Name
 ORDER BY Total_Revenue DESC;
+
+--Total quantity sold per category.
+SELECT
+	p.Category,
+	SUM(s.Quantity) AS Total_Quantity_Sold
+FROM Fact_Sales s
+JOIN Dim_Product p
+	ON s.Product_ID = p.Product_ID
+GROUP BY p.Category
+ORDER BY Total_Quantity_Sold DESC;
