@@ -23,4 +23,12 @@ JOIN Dim_Product p
 GROUP BY p.Category
 
 ORDER BY Total_Quantity_Sold DESC;
---this is just practice for branch
+
+-- Exclude returned items from total revenue
+SELECT Store,
+       SUM(Revenue) AS Total_Revenue
+FROM sample_sales
+WHERE Revenue > 0
+GROUP BY Store;
+
+
