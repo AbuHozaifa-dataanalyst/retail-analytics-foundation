@@ -21,4 +21,6 @@ FROM Fact_Sales s
 JOIN Dim_Product p
 	ON s.Product_ID = p.Product_ID
 GROUP BY p.Category
+
 ORDER BY Total_Quantity_Sold DESC;
+--this is just practice for branch
